@@ -32,7 +32,7 @@ Once the program is done it will save the results to a file called amplispy.log 
 
 ### Dependencies
 
-The mechanize lib is used to fetch the remote list of name servers and I used the blessings module in this script for formatting purposes, should you find you don't have these installed please use `pip` with the following commands to install it.
+The mechanize lib is used to fetch the remote list of name servers and I used the blessings module in this script for formatting purposes, should you find you don't have these installed please use `pip` with the following commands to install them.
 
 ```
 pip install blessings
