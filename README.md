@@ -28,6 +28,8 @@ amplispy.py -h
 amplispy.py -l /tmp/dns_list.txt --url target.com 
 ```
 
+Once the program is done it will save the results to a file called amplispy.log for further processing when desired.
+
 ### Dependencies
 
 I used the blessings module in this script for formatting purposes, should you find you don't have it installed please use `pip` with the following commands to install it.
