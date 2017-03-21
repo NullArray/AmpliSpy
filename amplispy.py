@@ -144,9 +144,7 @@ def start(known_pubs):
 		delay = int(delay)
 	print "\n[" + t.green("+") + "]Potentially Vulnerable Servers:\n"
 	
-	for address in RHOSTS: 
-		print address 
-		
+	for address in RHOSTS:  
 		if address in known_pubs:
 			pub = True
 		else:
