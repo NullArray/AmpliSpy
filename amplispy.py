@@ -129,6 +129,8 @@ def query(address):
         answer = resolver.query(args.url, "A")
         return True
     
+    except dns.resolver.NoNameservers:
+	return False    
     except dns.resolver.NoAnswer:
         return False
     except dns.resolver.NXDOMAIN:
