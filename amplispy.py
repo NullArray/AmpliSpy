@@ -39,12 +39,12 @@ amplispy.py -l /tmp/dns_list.txt --url target.com """)
    sys.exit(0)
     
 # Handle command line arguments
-parser = argparse.ArgumentParser(description="										  probe for DNS AMP suitable servers.\n")
+parser = argparse.ArgumentParser(description="			probe for DNS AMP suitable servers.\n")
 group = parser.add_mutually_exclusive_group()
 
-group.add_argument("-l", "--local", help="										 select locally saved list of name servers\n")
-group.add_argument("-r", "--remote", action="store_true", help="	fetch remote list of name servers from public-dns.info\n")
-parser.add_argument("-u", "--url", help="									  provide the URL for a domain to test against\n")
+group.add_argument("-l", "--local", help="			select locally saved list of name servers\n")
+group.add_argument("-r", "--remote", action="store_true", help="fetch remote list of name servers from public-dns.info\n")
+parser.add_argument("-u", "--url", help="			provide the URL for a domain to test against\n")
 
 args = parser.parse_args()
 
