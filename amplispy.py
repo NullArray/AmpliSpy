@@ -48,6 +48,10 @@ parser.add_argument("-u", "--url", help="			provide the URL for a domain to test
 
 args = parser.parse_args()
 
+if not args.url:
+	print "\n[" + t.red("!") + "]Critical, the '-u' option is mandatory.\n"
+	sys.exit(1)
+
 # Random user-agent selector
 def select_UA():
 	UAs = ["'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36'",
