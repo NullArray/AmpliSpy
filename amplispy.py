@@ -44,7 +44,7 @@ group = parser.add_mutually_exclusive_group()
 
 group.add_argument("-l", "--local", help="			select locally saved list of name servers\n")
 group.add_argument("-r", "--remote", action="store_true", help="fetch remote list of name servers from public-dns.info\n")
-parser.add_argument("-u", "--url", help="			provide the URL for a domain to test against\n")
+parser.add_argument("-u", "--url", type=str, help="			provide the URL for a domain to test against\n")
 
 args = parser.parse_args()
 
@@ -82,7 +82,8 @@ def mech_ops():
 		sys.exit(1)
 	
 	result = response.read()
-	proc = result.rstrip().split('\n')	
+	proc = result.rstrip().split('\n')
+		
 	return proc
 
 
@@ -94,9 +95,11 @@ if args.local:
 	
 	try:
 		with open(args.local, "r") as infile:
-			for line in infile:
+			text = infile.read()
+			proc = text.rstrip().split('\n')
+			for line in proc:
 				RHOSTS.append(line)
-								
+						
 	except IOError as e:
 		print "\n[" + t.red("!") + "]Critical. Unable to read list"
 		print "An IO Error was raised with the following error message: "
@@ -104,6 +107,7 @@ if args.local:
             
 else:
 	RHOSTS = mech_ops()
+
 
 
 known_pubs = {"8.8.8.8","8.8.4.4","209.244.0.3","209.244.0.4",
@@ -128,9 +132,8 @@ def query(address):
     try:
         answer = resolver.query(args.url, "A")
         return True
-    
     except dns.resolver.NoNameservers:
-	return False    
+		return False
     except dns.resolver.NoAnswer:
         return False
     except dns.resolver.NXDOMAIN:
