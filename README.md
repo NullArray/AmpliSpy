@@ -1,7 +1,7 @@
 # AmpliSpy
 Check local or remote list of DNS servers for suitability in DNS Amplification DoS.
 
-AmpliSpy checks a list of name server IPs and checks to see if a server responds for a zone for which it is none authoritative. You can provide the program with a list of name server IPs or you can set the `--remote` option to fetch a list of name servers from public-dns.info.
+AmpliSpy checks a list of name server IPs and to see if a server responds for a zone for which it is none authoritative. You can provide the program with a local list of name server IPs or you can set the `--remote` option to fetch a list of name servers from public-dns.info.
 
 ## Usage
 
@@ -32,6 +32,9 @@ Once the program is done it will save the results to a file called amplispy.log 
 
 ### Dependencies
 
-I used the blessings module in this script for formatting purposes, should you find you don't have it installed please use `pip` with the following commands to install it.
+The mechanize lib is used to fetch the remote list of name servers and I used the blessings module in this script for formatting purposes, should you find you don't have these installed please use `pip` with the following commands to install it.
 
-`pip install blessings`
+```
+pip install blessings`
+pip install mechanize
+```
