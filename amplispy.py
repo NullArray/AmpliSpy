@@ -151,7 +151,7 @@ def start(known_pubs):
 		delay = 0
 	else:
 		delay = int(delay)
-	print "\n[" + t.green("+") + "]Potentially Suitable Servers:\n"
+	print "\n[" + t.green("+") + "]Potentially suitable for DNS Amplification:\n"
 	
 	for address in RHOSTS:  
 		if address in known_pubs:
