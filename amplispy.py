@@ -151,7 +151,7 @@ def start(known_pubs):
 		delay = 0
 	else:
 		delay = int(delay)
-	print "\n[" + t.green("+") + "]Potentially Vulnerable Servers:\n"
+	print "\n[" + t.green("+") + "]Potentially Suitable Servers:\n"
 	
 	for address in RHOSTS:  
 		if address in known_pubs:
@@ -161,7 +161,7 @@ def start(known_pubs):
 		if not pub:
 			valid = query(address)
 			if valid:
-				print address
+				print "[" + t.magenta("~") + "] %s " % address
 				R_checked.append(address)
 			else:
 				continue
