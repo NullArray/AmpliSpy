@@ -76,7 +76,7 @@ def mech_ops():
 	try:
 		response = br.open("http://www.public-dns.info/nameservers.txt")
 	except Exception as e:
-		print "\n[" + t.red("!") + "]Critical, could not open punblic-dns.info"
+		print "\n[" + t.red("!") + "]Critical, could not open public-dns.info"
 		print "[" + t.green("+") + "]The following status code was recieved: \n"
 		print e
 		sys.exit(1)
