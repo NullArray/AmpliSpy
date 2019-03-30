@@ -74,7 +74,7 @@ def mech_ops():
 	br.addheaders = [('user-agent', select_UA()), ('accept', 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8')]
 
 	try:
-		response = br.open("http://www.public-dns.info/nameservers.txt")
+		response = br.open("http://public-dns.info//nameservers.txt")
 	except Exception as e:
 		print "\n[" + t.red("!") + "]Critical, could not open public-dns.info"
 		print "[" + t.green("+") + "]The following status code was recieved:"
